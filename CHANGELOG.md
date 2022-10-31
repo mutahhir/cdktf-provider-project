@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.93](https://github.com/mutahhir/cdktf-provider-project/compare/v0.2.92...v0.2.93) (2022-10-31)
+
 ### [0.2.8](https://github.com/hashicorp/cdktf-provider-project/compare/v0.2.7...v0.2.8) (2021-08-12)
 
 ### [0.2.7](https://github.com/hashicorp/cdktf-provider-project/compare/v0.2.6...v0.2.7) (2021-08-12)
