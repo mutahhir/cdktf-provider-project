@@ -79,14 +79,14 @@ export class ProviderUpgrade {
           {
             name: "Create Pull Request",
             if: newerVersionAvailable,
-            uses: "peter-evans/create-pull-request@v3",
+            uses: "peter-evans/create-pull-request@v4",
             with: {
               "commit-message": `chore: upgrade provider from \`${currentVersion}\` to version \`${newVersion}\``,
               branch: "auto/provider-upgrade",
               title: `chore: upgrade provider from \`${currentVersion}\` to version \`${newVersion}\``,
               body: `This PR upgrades provider to version ${newVersion}`,
               labels: "automerge",
-              token: "${{ secrets.GH_TOKEN }}",
+              token: "${{ secrets.GITHUB_TOKEN }}",
               "delete-branch": true,
               committer: "team-tf-cdk <github-team-tf-cdk@hashicorp.com>",
               author: "Team Terraform CDK <github-team-tf-cdk@hashicorp.com>",
