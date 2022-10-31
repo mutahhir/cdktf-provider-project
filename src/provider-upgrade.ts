@@ -72,7 +72,7 @@ export class ProviderUpgrade {
             name: "get new version",
             if: newerVersionAvailable,
             id: "new_version",
-            run: `echo "value=$(jq -r '. | to_entries[] | .value' version)" >> $GITHUB_OUTPUT`,
+            run: `echo "value=$(jq -r '. | to_entries[] | .value' src/version.json)" >> $GITHUB_OUTPUT`,
           },
 
           // submit a PR
