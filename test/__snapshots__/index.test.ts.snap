@@ -350,7 +350,7 @@ jobs:
       - name: get new version
         id: new_version
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
-        run: echo \\"value=$(jq -r '. | to_entries[] | .value' version)\\" >> $GITHUB_OUTPUT
+        run: echo \\"value=$(jq -r '. | to_entries[] | .value' src/version.json)\\" >> $GITHUB_OUTPUT
       - name: Create Pull Request
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
         uses: peter-evans/create-pull-request@v4
@@ -2663,7 +2663,7 @@ jobs:
       - name: get new version
         id: new_version
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
-        run: echo \\"value=$(jq -r '. | to_entries[] | .value' version)\\" >> $GITHUB_OUTPUT
+        run: echo \\"value=$(jq -r '. | to_entries[] | .value' src/version.json)\\" >> $GITHUB_OUTPUT
       - name: Create Pull Request
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
         uses: peter-evans/create-pull-request@v4
@@ -4973,7 +4973,7 @@ jobs:
       - name: get new version
         id: new_version
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
-        run: echo \\"value=$(jq -r '. | to_entries[] | .value' version)\\" >> $GITHUB_OUTPUT
+        run: echo \\"value=$(jq -r '. | to_entries[] | .value' src/version.json)\\" >> $GITHUB_OUTPUT
       - name: Create Pull Request
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
         uses: peter-evans/create-pull-request@v4
