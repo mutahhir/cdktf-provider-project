@@ -123,7 +123,7 @@ export class CdktfProviderProject extends cdk.JsiiProject {
       releaseToNpm: true,
       minNodeVersion,
       devDeps: [
-        `@cdktf/provider-project@^${version}`,
+        `@mutahhirdev/provider-project@^${version}`,
         "@actions/core@^1.1.0",
         "dot-prop@^5.2.0",
       ],

@@ -1,10 +1,10 @@
 const { cdk } = require("projen");
 
 const project = new cdk.JsiiProject({
-  name: "@cdktf/provider-project",
+  name: "@mutahhirdev/provider-project",
   authorName: "HashiCorp",
   authorUrl: "https://hashicorp.com",
-  repository: "https://github.com/hashicorp/cdktf-provider-project.git",
+  repository: "https://github.com/mutahhir/cdktf-provider-project.git",
   authorOrganization: true,
   peerDeps: ["projen@^0.64.1"],
   deps: ["change-case", "fs-extra"],
