@@ -347,11 +347,15 @@ jobs:
         run: yarn compile
       - if: \${{ steps.check_version.outputs.new_version == 'available' }}
         run: yarn docgen
+      - name: get new version
+        id: new_version
+        if: \${{ steps.check_version.outputs.new_version == 'available' }}
+        run: echo \\"value=$(jq -r '. | to_entries[] | .value' version)\\" >> $GITHUB_OUTPUT
       - name: Create Pull Request
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: \\"chore: upgrade provider from \`\${{ steps.current_version.outputs.value }}\` to version \`\${{ steps.new_version.outputs.value }}\`\\"
+          commit-message: \\"chore: upgrade provider\\"
           branch: auto/provider-upgrade
           title: \\"chore: upgrade provider from \`\${{ steps.current_version.outputs.value }}\` to version \`\${{ steps.new_version.outputs.value }}\`\\"
           body: This PR upgrades provider to version \${{ steps.new_version.outputs.value }}
@@ -955,7 +959,7 @@ cdktf.json
         "version": "^1.1.0",
       },
       Object {
-        "name": "@cdktf/provider-project",
+        "name": "@mutahhirdev/provider-project",
         "type": "build",
         "version": "^0.2.8",
       },
@@ -1881,7 +1885,7 @@ The repository is managed by [Repository Manager](https://github.com/hashicorp/c
     "description": "Prebuilt random Provider for Terraform CDK (cdktf)",
     "devDependencies": Object {
       "@actions/core": "^1.1.0",
-      "@cdktf/provider-project": "^0.2.8",
+      "@mutahhirdev/provider-project": "^0.2.8",
       "@types/node": "^14",
       "cdktf": ">=0.12.2 <0.14.0",
       "cdktf-cli": ">=0.12.2 <0.14.0",
@@ -2656,6 +2660,10 @@ jobs:
         run: yarn compile
       - if: \${{ steps.check_version.outputs.new_version == 'available' }}
         run: yarn docgen
+      - name: get new version
+        id: new_version
+        if: \${{ steps.check_version.outputs.new_version == 'available' }}
+        run: echo \\"value=$(jq -r '. | to_entries[] | .value' version)\\" >> $GITHUB_OUTPUT
       - name: Create Pull Request
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
         uses: peter-evans/create-pull-request@v3
@@ -3285,7 +3293,7 @@ cdktf.json
         "version": "^1.1.0",
       },
       Object {
-        "name": "@cdktf/provider-project",
+        "name": "@mutahhirdev/provider-project",
         "type": "build",
         "version": "^0.2.8",
       },
@@ -4211,7 +4219,7 @@ The repository is managed by [Repository Manager](https://github.com/hashicorp/c
     "description": "Prebuilt random Provider for Terraform CDK (cdktf)",
     "devDependencies": Object {
       "@actions/core": "^1.1.0",
-      "@cdktf/provider-project": "^0.2.8",
+      "@mutahhirdev/provider-project": "^0.2.8",
       "@types/node": "^14",
       "cdktf": "0.10.3",
       "cdktf-cli": "0.10.3",
@@ -4962,11 +4970,15 @@ jobs:
         run: yarn compile
       - if: \${{ steps.check_version.outputs.new_version == 'available' }}
         run: yarn docgen
+      - name: get new version
+        id: new_version
+        if: \${{ steps.check_version.outputs.new_version == 'available' }}
+        run: echo \\"value=$(jq -r '. | to_entries[] | .value' version)\\" >> $GITHUB_OUTPUT
       - name: Create Pull Request
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: \\"chore: upgrade provider from \`\${{ steps.current_version.outputs.value }}\` to version \`\${{ steps.new_version.outputs.value }}\`\\"
+          commit-message: \\"chore: upgrade provider\\"
           branch: auto/provider-upgrade
           title: \\"chore: upgrade provider from \`\${{ steps.current_version.outputs.value }}\` to version \`\${{ steps.new_version.outputs.value }}\`\\"
           body: This PR upgrades provider to version \${{ steps.new_version.outputs.value }}
@@ -5570,7 +5582,7 @@ cdktf.json
         "version": "^1.1.0",
       },
       Object {
-        "name": "@cdktf/provider-project",
+        "name": "@mutahhirdev/provider-project",
         "type": "build",
         "version": "^0.2.8",
       },
@@ -6496,7 +6508,7 @@ The repository is managed by [Repository Manager](https://github.com/hashicorp/c
     "description": "Prebuilt random Provider for Terraform CDK (cdktf)",
     "devDependencies": Object {
       "@actions/core": "^1.1.0",
-      "@cdktf/provider-project": "^0.2.8",
+      "@mutahhirdev/provider-project": "^0.2.8",
       "@types/node": "^14",
       "cdktf": "0.10.3",
       "cdktf-cli": "0.10.3",
