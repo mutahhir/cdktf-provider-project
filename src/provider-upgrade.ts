@@ -68,6 +68,13 @@ export class ProviderUpgrade {
           { run: "yarn compile", if: newerVersionAvailable },
           { run: "yarn docgen", if: newerVersionAvailable },
 
+          {
+            name: "get new version",
+            if: newerVersionAvailable,
+            id: "new_version",
+            run: `echo "value=$(jq -r '. | to_entries[] | .value' version)" >> $GITHUB_OUTPUT`,
+          },
+
           // submit a PR
           {
             name: "Create Pull Request",
