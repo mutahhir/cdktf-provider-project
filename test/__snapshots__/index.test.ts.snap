@@ -355,7 +355,7 @@ jobs:
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: \\"chore: upgrade provider\\"
+          commit-message: \\"chore: upgrade provider from \`\${{ steps.current_version.outputs.value }}\` to version \`\${{ steps.new_version.outputs.value }}\`\\"
           branch: auto/provider-upgrade
           title: \\"chore: upgrade provider from \`\${{ steps.current_version.outputs.value }}\` to version \`\${{ steps.new_version.outputs.value }}\`\\"
           body: This PR upgrades provider to version \${{ steps.new_version.outputs.value }}
@@ -4978,7 +4978,7 @@ jobs:
         if: \${{ steps.check_version.outputs.new_version == 'available' }}
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: \\"chore: upgrade provider\\"
+          commit-message: \\"chore: upgrade provider from \`\${{ steps.current_version.outputs.value }}\` to version \`\${{ steps.new_version.outputs.value }}\`\\"
           branch: auto/provider-upgrade
           title: \\"chore: upgrade provider from \`\${{ steps.current_version.outputs.value }}\` to version \`\${{ steps.new_version.outputs.value }}\`\\"
           body: This PR upgrades provider to version \${{ steps.new_version.outputs.value }}
